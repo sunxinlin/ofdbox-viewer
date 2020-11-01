@@ -34,7 +34,7 @@ public class TaskManage {
         log.info("开始清理任务");
         List<Map.Entry<String, Task>> copy = new ArrayList<>(tasks.entrySet());
         for (Map.Entry<String, Task> entry : copy) {
-            if (entry.getValue().getCreateTime() - System.currentTimeMillis() > taskClearTime * 3600 * 1000) {
+            if (System.currentTimeMillis()-entry.getValue().getCreateTime() > taskClearTime * 3600 * 1000) {
                 tasks.remove(entry.getKey());
                 log.info("清理任务："+entry.getKey());
             }
