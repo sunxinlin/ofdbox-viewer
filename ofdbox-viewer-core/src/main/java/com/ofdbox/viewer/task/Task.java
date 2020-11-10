@@ -1,14 +1,13 @@
 package com.ofdbox.viewer.task;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.qaqtutu.ofdbox.convertor.img.Ofd2Img;
-import com.qaqtutu.ofdbox.core.OFD;
-import com.qaqtutu.ofdbox.core.OFDReader;
-import com.qaqtutu.ofdbox.core.Page;
+import com.ofdbox.convertor.img.Ofd2Img;
+import com.ofdbox.core.*;
+import com.ofdbox.core.model.OFD;
+import com.ofdbox.core.model.page.Page;
 import lombok.Data;
 
 import javax.imageio.ImageIO;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -59,7 +58,7 @@ public class Task implements Runnable {
             for (Page page : ofd.getDocuments().get(0).getPages()) {
                 currentPage++;
                 File file = new File(imageDie, currentPage + ".png");
-                BufferedImage image = ofd2Img.toImage(page, 30);
+                BufferedImage image = ofd2Img.toImage(page,20);
                 ImageIO.write(image, "PNG", file);
                 pages.add(currentPage);
             }

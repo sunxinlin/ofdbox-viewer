@@ -38,8 +38,8 @@
 		</dependency>
 
 		<dependency>
-			<artifactId>ordbox-converter</artifactId>
-			<groupId>com.qaqtutu</groupId>
+			<artifactId>converter</artifactId>
+			<groupId>com.ofdbox</groupId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
